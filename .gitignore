@@ -6,6 +6,8 @@ target/
 
 ### Sensitive Data ###
 **/src/main/resources/
+pom.xml
+
 
 ### STS ###
 .apt_generated
