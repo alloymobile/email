@@ -17,20 +17,20 @@ import java.util.ArrayList;
 
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 
-    private final EmailProperties smsProperties;
+    private final EmailProperties emailProperties;
 
-    public AuthorizationFilter(AuthenticationManager authManager, EmailProperties smsProperties) {
+    public AuthorizationFilter(AuthenticationManager authManager, EmailProperties emailProperties) {
         super(authManager);
-        this.smsProperties = smsProperties;
+        this.emailProperties = emailProperties;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
                                     FilterChain chain) throws IOException, ServletException {
-        String header = req.getHeader(this.smsProperties.getHeaderString());
+        String header = req.getHeader(this.emailProperties.getHeaderString());
 
-        if (header == null || !header.startsWith(this.smsProperties.getTokenPrefix())) {
+        if (header == null || !header.startsWith(this.emailProperties.getTokenPrefix())) {
             chain.doFilter(req, res);
             return;
         }
@@ -43,13 +43,13 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
 
     // Reads the JWT from the Authorization header, and then uses JWT to validate the token
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader(this.smsProperties.getHeaderString());
+        String token = request.getHeader(this.emailProperties.getHeaderString());
 
         if (token != null) {
             // parse the token.
-            String user = JWT.require(Algorithm.HMAC512(this.smsProperties.getSecret().getBytes()))
+            String user = JWT.require(Algorithm.HMAC512(this.emailProperties.getSecret().getBytes()))
                     .build()
-                    .verify(token.replace(this.smsProperties.getTokenPrefix(), ""))
+                    .verify(token.replace(this.emailProperties.getTokenPrefix(), ""))
                     .getSubject();
 
             if (user != null) {
