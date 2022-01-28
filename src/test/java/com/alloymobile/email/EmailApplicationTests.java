@@ -1,4 +1,4 @@
-package com.alloymobiletech.email;
+package com.alloymobile.email;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
-package com.alloymobiletech.email.config;
+package com.alloymobile.email.config;
 
-import com.alloymobiletech.email.security.AuthorizationFilter;
+import com.alloymobile.email.security.AuthorizationFilter;
 import com.google.common.collect.ImmutableList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

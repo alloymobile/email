@@ -1,6 +1,6 @@
-package com.alloymobiletech.email.exception;
+package com.alloymobile.email.exception;
 
-import com.alloymobiletech.email.model.ResponseDTO;
+import com.alloymobile.email.model.ResponseDTO;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;

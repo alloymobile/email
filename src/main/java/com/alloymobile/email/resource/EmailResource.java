@@ -1,8 +1,8 @@
-package com.alloymobiletech.email.resource;
+package com.alloymobile.email.resource;
 
-import com.alloymobiletech.email.integration.EmailService;
-import com.alloymobiletech.email.model.EmailDTO;
-import com.alloymobiletech.email.model.ResponseDTO;
+import com.alloymobile.email.integration.EmailService;
+import com.alloymobile.email.model.EmailDTO;
+import com.alloymobile.email.model.ResponseDTO;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;

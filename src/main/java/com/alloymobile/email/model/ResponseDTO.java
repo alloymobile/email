@@ -1,4 +1,4 @@
-package com.alloymobiletech.email.model;
+package com.alloymobile.email.model;
 
 import lombok.Data;
 

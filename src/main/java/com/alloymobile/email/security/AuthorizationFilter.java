@@ -1,6 +1,6 @@
-package com.alloymobiletech.email.security;
+package com.alloymobile.email.security;
 
-import com.alloymobiletech.email.config.EmailProperties;
+import com.alloymobile.email.config.EmailProperties;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.security.authentication.AuthenticationManager;
