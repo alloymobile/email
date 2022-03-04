@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @ConfigurationProperties("email")
 public class EmailProperties {
-    private String siteURL;
-    private String fromEmail;
     private String secret;
     private String tokenPrefix;
     private String headerString;

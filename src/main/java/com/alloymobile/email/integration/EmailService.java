@@ -19,13 +19,10 @@ import java.io.IOException;
 
 @Service
 public class EmailService {
-
-    private final EmailProperties properties;
     
     private final SendGrid sendGrid;
 
-    public EmailService(EmailProperties properties, SendGrid sendGrid) {
-        this.properties = properties;
+    public EmailService(SendGrid sendGrid) {
         this.sendGrid = sendGrid;
     }
 
@@ -37,7 +34,7 @@ public class EmailService {
 
         Content content = new Content("text/html", body);
 
-        Email from = new Email(properties.getFromEmail());
+        Email from = new Email(emailDTO.getFromMailAddress());
 
         Email to = new Email(toEmail);
 
