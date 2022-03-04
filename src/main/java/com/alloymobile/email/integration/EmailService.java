@@ -7,6 +7,7 @@ import com.alloymobile.email.config.EmailProperties;
 import com.alloymobile.email.model.ResponseDTO;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
+import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
@@ -45,7 +46,8 @@ public class EmailService {
             request.setMethod(Method.POST);
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
-            this.sendGrid.api(request);
+            Response response = this.sendGrid.api(request);
+            System.out.println(response.getBody());
         } catch (IOException ex) {
            throw new InternalServerException("Can not send email try again");
         }
