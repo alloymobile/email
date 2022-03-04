@@ -3,7 +3,6 @@ package com.alloymobile.email.integration;
 
 import com.alloymobile.email.exception.InternalServerException;
 import com.alloymobile.email.model.EmailDTO;
-import com.alloymobile.email.config.EmailProperties;
 import com.alloymobile.email.model.ResponseDTO;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
